@@ -1,10 +1,12 @@
-# 5StarOneKey
-已经更新到自定义打分版本，名字已经出现偏差啦，但是叫着顺口懒得改了
+# OPR like an orangutan
+fork from 5StarOneKey
+
+opr 一键 通过/不知道/拒绝 插件
 
 使用教程
 -------------
 首先，浏览器安装了tampermonkey之类的userjs插件，然后点击
-https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
+https://github.com/RalfZhang/OPR-like-an-orangutan/raw/master/OPR-like-an-orangutan.js
 浏览器会弹出安装界面
 
 不想用默认评分？
