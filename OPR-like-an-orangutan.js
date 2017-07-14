@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name         5 Star One Key
+// @name         OPR like an orangutan
 // @version      0.23
-// @description  Give five star with single click
+// @description  Just accept, unknown, reject
 // @updateURL    https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
-// @author       jqqqqqqqqqq
+// @author       ralfz (SBZK)
 // @match        https://opr.ingress.com/recon
 // @grant        none
 // ==/UserScript==
