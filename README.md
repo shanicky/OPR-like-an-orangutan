@@ -6,7 +6,7 @@ opr 一键 通过/不知道/拒绝 插件
 使用教程
 -------------
 首先，浏览器安装了tampermonkey之类的userjs插件，然后点击
-https://github.com/RalfZhang/OPR-like-an-orangutan/raw/master/OPR-like-an-orangutan.js
+https://github.com/RalfZhang/OPR-like-an-orangutan/raw/master/OPR-like-an-orangutan.user.js
 浏览器会弹出安装界面
 
 不想用默认评分？

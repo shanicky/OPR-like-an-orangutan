@@ -11,7 +11,7 @@
 
 var buttons = [
 	{button:"Accept", total:5, name:5, history:5, unique:5, location:5, safety:5, bg:'#0f0'},
-	{button:"Unknown", total:3, name:3, history:3, unique:3, location:3, safety:3, bg:'rgb(255,228,0)'},
+	{button:"Unsure", total:3, name:3, history:3, unique:3, location:3, safety:3, bg:'rgb(255,228,0)'},
 	{button:"Reject", total:1, bg:'#f00'},
 ];
 
