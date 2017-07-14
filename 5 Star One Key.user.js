@@ -10,9 +10,9 @@
 // ==/UserScript==
 
 var buttons = [
-	{button:"Accept", total:5, name:5, history:5, unique:5, location:5, safety:5, bg:'green'},
-	{button:"Unknown", total:3, name:3, history:3, unique:3, location:3, safety:3, bg:'yellow'},
-	{button:"Reject", total:1, bg:'red'},
+	{button:"Accept", total:5, name:5, history:5, unique:5, location:5, safety:5, bg:'#0f0'},
+	{button:"Unknown", total:3, name:3, history:3, unique:3, location:3, safety:3, bg:'rgb(255,228,0)'},
+	{button:"Reject", total:1, bg:'#f00'},
 ];
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -39,7 +39,7 @@ function add_button() {
         var button = document.createElement("button");
         var textnode = document.createTextNode(button_data["button"]);
         button.appendChild(textnode);
-        button.setAttribute('style', 'height: 100px; width: 100px; font-size: 20px; display: inline-block; boder: 2px solid #fff; border-radius: 50%; color: #fff; margin: 30px 10px;');
+        button.setAttribute('style', 'height: 100px; width: 100px; font-size: 20px; display: inline-block; border: 2px solid #fff; border-radius: 50%; color: #fff; font-weight: 700; margin: 30px 10px;');
         button.style.background = button_data.bg || '#888';
         button_region.appendChild(button);
         button.onclick = function(){
@@ -48,7 +48,7 @@ function add_button() {
                 document.querySelector('#submitDiv>button').click();
                 return;
             }
-            
+            document.querySelector('.modal-med .modal-content div.text-center button:nth-child(2)').click()
         };
     });
 }
