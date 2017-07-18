@@ -9,10 +9,40 @@
 // @grant        none
 // ==/UserScript==
 
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function getNumberFunc(num) {
+    return function() { return num }
+}
+
 var buttons = [
-	{button:"Accept", total:5, name:5, history:5, unique:5, location:5, safety:5, bg:'#0f0'},
-	{button:"Unsure", total:3, name:3, history:3, unique:3, location:3, safety:3, bg:'rgb(255,228,0)'},
-	{button:"Reject", total:1, bg:'#f00'},
+    {
+        button:"Accept",
+        total:getNumberFunc(5),
+        name:getRandomInt(4,5),
+        history:getRandomInt(4,5),
+        unique:getRandomInt(4,5),
+        location:getRandomInt(4,5),
+        safety:getRandomInt(4,5),
+        bg:'#0f0'
+    },
+    {
+        button:"Unsure",
+        total:getNumberFunc(3),
+        name:getRandomInt(2,4),
+        history:getRandomInt(2,4),
+        unique:getRandomInt(2,4),
+        location:getRandomInt(2,4),
+        safety:getNumberFunc(2,4),
+        bg:'rgb(255,228,0)'
+    },
+    {
+        button:"Reject",
+        total:getNumberFunc(1),
+        bg:'#f00'
+    },
 ];
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -21,15 +51,16 @@ var buttons = [
 
 
 function rate_portal(total, name, history, unique, location, safety) {
-    document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(1) > div.btn-group > button:nth-child(" + total + ")").click();
-    if(total===1){
+    var totalValue = total()
+    document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(1) > div.btn-group > button:nth-child(" + totalValue + ")").click();
+    if(totalValue===1){
         return;
     }
-    document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(5) > button:nth-child(" + name + ")").click();
-    document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(10) > button:nth-child(" + history + ")").click();
-    document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(15) > button:nth-child(" + unique + ")").click();
-    document.querySelector("#AnswersController > form > div:nth-child(2) > div:nth-child(1) > div:nth-child(6) > button:nth-child(" + location + ")").click();
-    document.querySelector("#AnswersController > form > div:nth-child(2) > div:nth-child(1) > div:nth-child(11) > button:nth-child(" + safety + ")").click();
+    document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(5) > button:nth-child(" + name() + ")").click();
+    document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(10) > button:nth-child(" + history() + ")").click();
+    document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center > div:nth-child(15) > button:nth-child(" + unique() + ")").click();
+    document.querySelector("#AnswersController > form > div:nth-child(2) > div:nth-child(1) > div:nth-child(6) > button:nth-child(" + location() + ")").click();
+    document.querySelector("#AnswersController > form > div:nth-child(2) > div:nth-child(1) > div:nth-child(11) > button:nth-child(" + safety() + ")").click();
 }
 
 function add_button() {
