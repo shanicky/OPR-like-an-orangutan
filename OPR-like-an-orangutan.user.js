@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         OPR like an orangutan
-// @version      0.23.1
+// @version      0.24
 // @description  Just accept, unknown, reject
 // @updateURL    https://github.com/RalfZhang/OPR-like-an-orangutan/raw/master/OPR-like-an-orangutan.user.js
 // @downloadURL  https://github.com/RalfZhang/OPR-like-an-orangutan/raw/master/OPR-like-an-orangutan.user.js
