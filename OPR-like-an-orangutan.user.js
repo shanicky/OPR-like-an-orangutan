@@ -13,11 +13,11 @@
 function getRandomIntFunc(min, max) {
     return function() {
         return Math.floor(Math.random() * (max - min + 1) + min);
-    }
+    };
 }
 
 function getNumberFunc(num) {
-    return function() { return num }
+    return function() { return num; };
 }
 
 var buttons = [
@@ -54,7 +54,7 @@ var buttons = [
 
 
 function rate_portal(total, name, history, unique, location, safety) {
-    var totalValue = total()
+    var totalValue = total();
     document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(1) > div.btn-group > button:nth-child(" + totalValue + ")").click();
     if(totalValue===1){
         return;
@@ -68,21 +68,21 @@ function rate_portal(total, name, history, unique, location, safety) {
 
 function add_button() {
     var button_region = document.querySelector('form[name="answers"] .pull-right');
-    button_region.appendChild(document.createElement('br'))
+    button_region.appendChild(document.createElement('br'));
     buttons.forEach(function(button_data) {
         var button = document.createElement("button");
-        var textnode = document.createTextNode(button_data["button"]);
+        var textnode = document.createTextNode(button_data.button);
         button.appendChild(textnode);
         button.setAttribute('style', 'height: 100px; width: 100px; font-size: 20px; display: inline-block; border: 2px solid #fff; border-radius: 50%; color: #fff; font-weight: 700; margin: 30px 10px;');
         button.style.background = button_data.bg || '#888';
         button_region.appendChild(button);
         button.onclick = function(){
-            rate_portal(button_data["total"], button_data["name"], button_data["history"], button_data["unique"], button_data["location"], button_data["safety"]);
+            rate_portal(button_data.total, button_data.name, button_data.history, button_data.unique, button_data.location, button_data.safety);
             if(button_data.total!==1) {
                 document.querySelector('#submitDiv>button').click();
                 return;
             }
-            document.querySelector('.modal-med .modal-content div.text-center button:nth-child(2)').click()
+            document.querySelector('.modal-med .modal-content div.text-center button:nth-child(2)').click();
         };
     });
 }
