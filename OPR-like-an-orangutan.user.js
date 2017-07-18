@@ -9,8 +9,11 @@
 // @grant        none
 // ==/UserScript==
 
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+
+function getRandomIntFunc(min, max) {
+    return function() {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
 }
 
 function getNumberFunc(num) {
@@ -21,20 +24,20 @@ var buttons = [
     {
         button:"Accept",
         total:getNumberFunc(5),
-        name:getRandomInt(4,5),
-        history:getRandomInt(4,5),
-        unique:getRandomInt(4,5),
-        location:getRandomInt(4,5),
-        safety:getRandomInt(4,5),
+        name:getRandomIntFunc(4,5),
+        history:getRandomIntFunc(4,5),
+        unique:getRandomIntFunc(4,5),
+        location:getRandomIntFunc(4,5),
+        safety:getRandomIntFunc(4,5),
         bg:'#0f0'
     },
     {
         button:"Unsure",
         total:getNumberFunc(3),
-        name:getRandomInt(2,4),
-        history:getRandomInt(2,4),
-        unique:getRandomInt(2,4),
-        location:getRandomInt(2,4),
+        name:getRandomIntFunc(2,4),
+        history:getRandomIntFunc(2,4),
+        unique:getRandomIntFunc(2,4),
+        location:getRandomIntFunc(2,4),
         safety:getNumberFunc(2,4),
         bg:'rgb(255,228,0)'
     },
